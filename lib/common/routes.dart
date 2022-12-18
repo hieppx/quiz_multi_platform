@@ -1,0 +1,10 @@
+const String kMain = '/';
+const String kLogin = '/login';
+const String kRegister = '/register';
+const String kHome = '/home';
+const String kQuiz = '/quiz';
+const String kInformation = '/information';
+const String kRank = '/rank';
+const String kQuizScreen = '/quiz';
+const String kScore = '/score';
+const String kResetPassword = '/reset-password';
