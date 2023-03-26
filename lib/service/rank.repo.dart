@@ -7,9 +7,7 @@ import '../models/rank.dart';
 class RankRepo {
   Future<List<Rank>> getRank(String title) async {
     var url = Uri.parse(Url.getRank);
-    var res = await http.post(url, body: {
-      "title" : title
-    });
+    var res = await http.post(url, body: {"title": title});
     if (res.statusCode == 200) {
       List<dynamic> body = jsonDecode(res.body);
       return body.map((e) => Rank.fromJson(e)).toList();
@@ -19,11 +17,11 @@ class RankRepo {
   }
 
   Future<void> insertRank(String userID, String courseID, String score) async {
-    var url = Uri.http(Url.baseUrl, Url.insertRank, {'q': '{http}'});
+    var url = Uri.parse(Url.insertRank);
     await http.post(url, body: {
-      'userID':  userID,
-      'courseID':  courseID,
-      'score':  score,
+      'userID': userID,
+      'courseID': courseID,
+      'score': score,
     });
   }
 }

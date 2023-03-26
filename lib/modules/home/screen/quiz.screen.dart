@@ -27,7 +27,7 @@ class _QuizScreenState extends State<QuizScreen>
 
   void init() async {
     model.getQuestion();
-    model.getTime(this);
+    model.getTime(this, context);
   }
 
   @override

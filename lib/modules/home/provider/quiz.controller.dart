@@ -47,14 +47,14 @@ class QuizModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void getTime(TickerProvider ticket) {
+  void getTime(TickerProvider ticket, BuildContext context) {
     _animationController = AnimationController(
         duration: const Duration(seconds: 12), vsync: ticket);
     _animation = Tween<double>(begin: 0, end: 1).animate(_animationController!)
       ..addListener(() {
         notifyListeners();
       });
-    _animationController!.forward().whenComplete(() => nextPage);
+    _animationController!.forward().whenComplete(() => nextPage(context));
     _pageController = PageController();
     notifyListeners();
   }
@@ -64,8 +64,9 @@ class QuizModel extends ChangeNotifier {
       _isAnswered = false;
       _pageController.animateToPage(_pageChanged! + 1,
           duration: const Duration(milliseconds: 250), curve: Curves.ease);
+
       _animationController!.reset();
-      _animationController!.forward().whenComplete(() => nextPage);
+      _animationController!.forward().whenComplete(() => nextPage(context));
     } else {
       _animationController!.stop();
       insertResult(_numOfCorrectAns);

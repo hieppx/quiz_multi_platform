@@ -124,28 +124,28 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  fullname != null
-                      ? Text(
-                          fullname!,
-                          style: const TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
-                        )
-                      : Container(),
-                  userName != null
-                      ? Text(
-                          userName!,
-                          style: const TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
-                        )
-                      : Container(),
-                ],
-              ),
+              // Column(
+              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   children: [
+              //     const SizedBox(
+              //       height: 10,
+              //     ),
+              //     fullname != null
+              //         ? Text(
+              //             fullname!,
+              //             style: const TextStyle(
+              //                 fontSize: 16, fontWeight: FontWeight.bold),
+              //           )
+              //         : Container(),
+              //     userName != null
+              //         ? Text(
+              //             userName!,
+              //             style: const TextStyle(
+              //                 fontSize: 16, fontWeight: FontWeight.bold),
+              //           )
+              //         : Container(),
+              //   ],
+              // ),
               const SizedBox(
                 width: 10,
               ),
